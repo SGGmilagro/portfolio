@@ -1,15 +1,15 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import ParticleBackground from "./components/ParticleBackground";
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
 };
 
-const stagger = {
+const stagger: Variants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.12 } },
 };
@@ -70,7 +70,6 @@ export default function Home() {
           </motion.div>
         </motion.div>
 
-        {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2 }}
           className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
@@ -89,7 +88,7 @@ export default function Home() {
             I am drawn to systems that<br />
             <span className="text-cyan-400">fail in interesting ways.</span>
           </motion.p>
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <div className="grid md:grid-cols-4 gap-6 mb-12">
             {[
               { label: "Focus", value: "Risk Analytics & AI", icon: "◈" },
               { label: "Location", value: "Boston, MA", icon: "◎" },
@@ -114,7 +113,6 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* DIVIDER */}
       <div className="mx-8 md:mx-24 h-px bg-white/[0.06]" />
 
       {/* PROJECTS */}
@@ -197,7 +195,6 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* DIVIDER */}
       <div className="mx-8 md:mx-24 h-px bg-white/[0.06]" />
 
       {/* SKILLS */}
@@ -231,7 +228,6 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* DIVIDER */}
       <div className="mx-8 md:mx-24 h-px bg-white/[0.06]" />
 
       {/* CONTACT */}
