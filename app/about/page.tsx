@@ -1,12 +1,11 @@
 import Link from "next/link";
-import Image from "next/image";
 
 export default function About() {
   return (
     <main className="bg-[#0a0a0a] text-white min-h-screen font-sans">
 
       {/* NAV BACK */}
-      <div className="px-8 md:px-24 pt-12">
+      <div className="px-8 md:px-24 pt-24">
         <Link href="/" className="text-sm text-white/30 hover:text-cyan-400 transition-colors">
           ← Back
         </Link>
@@ -14,14 +13,13 @@ export default function About() {
 
       {/* HEADER */}
       <section className="px-8 md:px-24 py-24 border-b border-white/10">
-        <p className="text-sm tracking-widest text-cyan-400 uppercase mb-4">About</p>
+        <p className="text-xs tracking-widest text-cyan-400 uppercase mb-4">About</p>
         <h1 className="text-6xl md:text-7xl font-bold tracking-tight mb-8">
           Regina<br />Garfias
         </h1>
         <p className="text-2xl text-white/50 max-w-3xl leading-relaxed">
-          Security is not only technical — it is structural. I am fascinated by how 
-          systems fail, how incentives distort behavior, and how data reveals hidden 
-          patterns.
+          I am fascinated by how systems fail, how incentives distort behavior,
+          and how data reveals what people miss when they're not paying attention.
         </p>
       </section>
 
@@ -29,67 +27,67 @@ export default function About() {
       <section className="px-8 md:px-24 py-24 border-b border-white/10">
         <div className="grid md:grid-cols-2 gap-16">
           <div>
-            <p className="text-sm tracking-widest text-white/30 uppercase mb-6">Background</p>
+            <p className="text-xs tracking-widest text-white/30 uppercase mb-6">Background</p>
             <p className="text-white/70 text-lg leading-relaxed">
-              Mexican-Spanish, based in Boston. I came to analytics through a deep 
-              obsession with understanding why things break — markets, systems, 
-              organizations, incentive structures. That obsession led me to risk modeling, 
-              anomaly detection, and eventually cybersecurity.
+              Seven countries. Three languages. One very non-linear path.
             </p>
             <p className="mt-6 text-white/70 text-lg leading-relaxed">
-              I speak English, Spanish and French. I am currently completing my MSc in 
-              Business Analytics at Hult International Business School, where I also work 
-              as a Course Assistant teaching AI strategy to undergraduates.
+              Mexican and Spanish by origin, London by education, Boston by choice.
             </p>
             <p className="mt-6 text-white/70 text-lg leading-relaxed">
-              My long-term goal is to build advisory frameworks that strengthen resilience 
-              in high-stakes environments — where the cost of being wrong is not just 
-              financial, but structural.
+              Seven countries will teach you things no classroom can. How to read a room
+              in thirty seconds. How to find the pattern underneath the noise. How to be
+              the person who doesn't quite fit — and make that the advantage.
+            </p>
+            <p className="mt-6 text-white/70 text-lg leading-relaxed">
+              I hacked my school system at ten. The teacher gave me an A and patched
+              the vulnerability. That's probably when I knew.
+            </p>
+            <p className="mt-6 text-white/70 text-lg leading-relaxed">
+              Since then — two degrees (one on scholarship, one a full ride), sharks
+              in South Africa, skydiving, and markets since I was fifteen. The common
+              thread is curiosity and a fairly high tolerance for uncertainty.
+            </p>
+            <p className="mt-6 text-white/70 text-lg leading-relaxed">
+              I ended up in risk analytics because it's the one field where both of
+              those things are actually useful.
             </p>
           </div>
           <div className="flex flex-col gap-6">
-            <p className="text-sm tracking-widest text-white/30 uppercase mb-2">Philosophy</p>
+            <p className="text-xs tracking-widest text-white/30 uppercase mb-2">How I think</p>
             {[
-              "I see things differently — pattern recognition is not just a technical skill, it is a way of thinking.",
-              "High-stakes environments don't scare me. They focus me.",
-              "I am obsessed with learning. Not credentials — actual understanding.",
-              "Data is only useful when it changes a decision."
+              "I weigh risk and reward before most decisions — in markets, in projects, and in life. If the spread is reasonable and the upside is real, I'll take the position.",
+              "I've been investing since I was 15. The most useful thing I learned wasn't a strategy — it was that time in the market beats timing the market, and that a stop loss matters.",
+              "I tend to see structure where others see noise. Pattern recognition isn't just technical — it's a way of approaching problems.",
+              "Novelty doesn't intimidate me. New environments, new fields, new constraints — that's usually where the interesting work is.",
             ].map((q, i) => (
               <div key={i} className="border-l-2 border-cyan-400/30 pl-6">
-                <p className="text-white/60 text-lg italic">{q}</p>
+                <p className="text-white/60 text-base leading-relaxed">{q}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* LICENSES & CERTIFICATIONS */}
+      {/* LICENSES */}
       <section className="px-8 md:px-24 py-24 border-b border-white/10">
-        <p className="text-sm tracking-widest text-cyan-400 uppercase mb-12">Licenses & Certifications</p>
+        <p className="text-xs tracking-widest text-cyan-400 uppercase mb-12">Licenses & Certifications</p>
         <div className="grid md:grid-cols-3 gap-8">
           {[
             {
               category: "Skydiving",
               icon: "🪂",
-              items: [
-                "USPA B License — 208 jumps",
-                "British Skydiving License",
-              ]
+              items: ["USPA B License — 208 jumps", "British Skydiving License"]
             },
             {
               category: "Diving",
               icon: "🤿",
-              items: [
-                "SSI Specialty Diver",
-                "PADI Certified",
-              ]
+              items: ["PADI Certified", "SSI Specialty Diver"]
             },
             {
               category: "Aviation",
               icon: "✈️",
-              items: [
-                "Student Pilot",
-              ]
+              items: ["Student Pilot"]
             },
             {
               category: "Cybersecurity",
@@ -98,6 +96,7 @@ export default function About() {
                 "Google Cybersecurity Certificate",
                 "GE Aerospace Digital Technology",
                 "J.P. Morgan Investment Banking",
+                "Goldman Sachs Software Engineering",
                 "Oliver Wyman Financial Services",
               ]
             },
@@ -109,7 +108,7 @@ export default function About() {
                 "Intermediate Regression — statsmodels",
                 "Hypothesis Testing in Python",
                 "Joining Data in SQL",
-                "Excel Skills for Business — Goldman Sachs",
+                "Machine Learning for Business",
               ]
             },
             {
@@ -117,11 +116,13 @@ export default function About() {
               icon: "📈",
               items: [
                 "Asset Allocation in Investment",
-                "Financial Valuation",
+                "CONDUSEF Financial Education — A+",
+                "BGG Venture & Business Builds",
               ]
             },
           ].map((group) => (
-            <div key={group.category} className="border border-white/10 p-8">
+            <div key={group.category}
+              className="border border-white/10 rounded-2xl p-8 hover:border-cyan-400/20 transition-all">
               <div className="text-2xl mb-4">{group.icon}</div>
               <p className="text-white/30 text-xs tracking-widest uppercase mb-4">{group.category}</p>
               <ul className="space-y-2">
@@ -134,20 +135,27 @@ export default function About() {
         </div>
       </section>
 
-      {/* OUTSIDE WORK */}
+      {/* OUTSIDE OF WORK */}
       <section className="px-8 md:px-24 py-24 border-b border-white/10">
-        <p className="text-sm tracking-widest text-cyan-400 uppercase mb-12">Outside of Work</p>
-        <div className="grid md:grid-cols-4 gap-8">
+        <p className="text-xs tracking-widest text-cyan-400 uppercase mb-4">Outside of work</p>
+        <p className="text-3xl font-light text-white/80 mb-12 max-w-2xl">
+          Interests & hobbies
+        </p>
+        <div className="flex flex-wrap gap-4">
           {[
-            { icon: "🪂", title: "Skydiving", desc: "208 jumps. USPA B + British license. The closest thing to applied risk tolerance." },
-            { icon: "🤿", title: "Scuba Diving", desc: "SSI Specialty Diver. Precision and calm in environments that punish mistakes." },
-            { icon: "✈️", title: "Student Pilot", desc: "Learning to fly. Because why not add another high-stakes skill." },
-            { icon: "⛳", title: "Golf & Poker", desc: "Strategy, patience, reading patterns. Not that different from risk modeling." },
+            { icon: "🪂", title: "Skydiving" },
+            { icon: "🤿", title: "Scuba Diving" },
+            { icon: "✈️", title: "Flying" },
+            { icon: "⛳", title: "Golf" },
+            { icon: "🃏", title: "Poker" },
+            { icon: "🎨", title: "Art" },
+            { icon: "🗳️", title: "Politics" },
+            { icon: "🚬", title: "Cigars" },
           ].map((item) => (
-            <div key={item.title} className="border border-white/10 p-8 hover:border-cyan-400/30 transition-all">
-              <div className="text-3xl mb-4">{item.icon}</div>
-              <h3 className="text-white font-semibold mb-3">{item.title}</h3>
-              <p className="text-white/40 text-sm leading-relaxed">{item.desc}</p>
+            <div key={item.title}
+              className="flex items-center gap-3 bg-white/[0.02] border border-white/[0.06] hover:border-cyan-400/20 rounded-full px-6 py-3 transition-all">
+              <span className="text-xl">{item.icon}</span>
+              <span className="text-white/60 text-sm font-medium">{item.title}</span>
             </div>
           ))}
         </div>
@@ -155,17 +163,17 @@ export default function About() {
 
       {/* CTA */}
       <section className="px-8 md:px-24 py-24">
-        <h2 className="text-5xl font-bold mb-8">Let's connect.</h2>
-        <div className="flex flex-col gap-4 text-white/50">
-          <a href="mailto:reginagarfias@proton.me"
-            className="hover:text-cyan-400 transition-colors text-lg">
-            reginagarfias@proton.me →
-          </a>
-          <a href="https://linkedin.com/in/reginagarfias" target="_blank"
-            className="hover:text-cyan-400 transition-colors text-lg">
-            linkedin.com/in/reginagarfias →
-          </a>
-        </div>
+        <h2 className="text-5xl font-bold mb-4">
+          Let's <span className="text-cyan-400">connect.</span>
+        </h2>
+        <p className="text-white/30 mb-10 text-lg max-w-md">
+          Always open to a good conversation — whether it's about work,
+          markets, or something else entirely.
+        </p>
+        <a href="mailto:reginagarfias@proton.me"
+          className="inline-flex items-center gap-3 bg-cyan-400/10 hover:bg-cyan-400/20 border border-cyan-400/30 rounded-full px-8 py-4 text-cyan-400 text-sm font-medium transition-all">
+          Say hello →
+        </a>
       </section>
 
     </main>
