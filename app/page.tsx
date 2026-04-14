@@ -14,11 +14,19 @@ const stagger: Variants = {
   visible: { transition: { staggerChildren: 0.12 } },
 };
 
+const navItems = [
+  { label: "About", href: "#about" },
+  { label: "Projects", href: "#projects" },
+  { label: "Experience", href: "#experience" },
+  { label: "Skills", href: "#skills" },
+  { label: "Contact", href: "#contact" },
+];
+
 const stats = [
-  { value: "208", label: "Skydives" },
-  { value: "7", label: "Countries lived" },
+  { value: "7", label: "Countries Lived" },
   { value: "3", label: "Languages" },
-  { value: "3", label: "Continents worked" },
+  { value: "3", label: "Continents Worked" },
+  { value: "208", label: "Skydives" },
 ];
 
 const skillGroups = [
@@ -71,28 +79,28 @@ const skillGroups = [
 const projects = [
   {
     title: "LLM Learning Assistant",
-    desc: "LLM-powered learning assistant with API integration and structured prompt orchestration.",
+    desc: "I wanted to understand how LLMs actually think — the embeddings, the architecture, the full system. So I built a personalized learning assistant to find out how tailored you can really make one.",
     tags: ["LLM", "API", "AI"],
     link: "https://github.com/SGGmilagro/llm-learning-assistant",
     image: "/llm.png"
   },
   {
     title: "Behavioral Anomaly Segmentation",
-    desc: "Unsupervised segmentation using PCA and Gaussian Mixture Models for anomaly detection.",
+    desc: "I wanted to know what hides in high-dimensional data that normal models miss. Applied unsupervised segmentation with PCA and Gaussian Mixture Models to find out and cluster behavioral anomalies.",
     tags: ["Python", "PCA", "GMM"],
     link: "https://github.com/SGGmilagro/behavioral-anomaly-segmentation",
     image: "/anomaly.png"
   },
   {
     title: "Secure E-Commerce Auth Hardening",
-    desc: "JWT authentication with refresh token rotation, SHA-256 hashing and revocation.",
+    desc: "I wanted to understand how authentication actually breaks. Built a full JWT system with refresh token rotation, SHA-256 hashing and revocation to find out.",
     tags: ["Node.js", "JWT", "Security"],
     link: "https://github.com/SGGmilagro/secure-ecommerce-auth-hardening",
     image: "/auth.png"
   },
   {
     title: "SQL Portfolio Risk Diagnostics",
-    desc: "Multi-horizon returns, volatility modeling and risk-adjusted performance diagnostics.",
+    desc: "I wanted to understand how much you can learn about a client's risk profile from just the right queries. Built multi-horizon return analysis and volatility modeling to turn raw data into real investment decisions.",
     tags: ["SQL", "Risk", "Finance"],
     link: "https://github.com/SGGmilagro/sql-portfolio-risk-diagnostics",
     image: "/risk.png"
@@ -179,21 +187,41 @@ const experience = [
 export default function Home() {
   return (
     <main className="bg-[#080808] text-white min-h-screen font-sans pt-16">
+      <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/[0.06] bg-[#080808]/80 backdrop-blur-xl">
+        <div className="px-8 md:px-24 h-16 flex items-center justify-between">
+          <Link href="#home" className="text-cyan-400 font-semibold text-2xl tracking-tight">
+            RG
+          </Link>
+
+          <nav className="hidden md:flex items-center gap-8">
+            {navItems.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className="text-sm text-white/50 hover:text-white transition-colors"
+              >
+                {item.label}
+              </a>
+            ))}
+            <a
+              href="/cv.pdf"
+              target="_blank"
+              className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-5 py-2 text-sm text-cyan-400 transition-all hover:bg-cyan-400/20"
+            >
+              CV ↓
+            </a>
+          </nav>
+        </div>
+      </header>
 
       {/* HERO */}
-      <section className="relative min-h-screen flex flex-col justify-center px-8 md:px-24 overflow-hidden">
+      <section id="home" className="relative min-h-screen flex flex-col justify-center px-8 md:px-24 overflow-hidden pt-10">
         <ParticleBackground />
         <motion.div
           className="relative z-10 flex flex-col md:flex-row md:items-center gap-20"
           variants={stagger} initial="hidden" animate="visible">
 
           <div className="flex-1">
-            <motion.div variants={fadeUp}
-              className="inline-flex items-center gap-2 bg-cyan-400/5 border border-cyan-400/20 rounded-full px-4 py-2 mb-8">
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-              <span className="text-xs tracking-widest text-cyan-400 uppercase">Risk Analytics & AI · Boston, MA</span>
-            </motion.div>
-
             <motion.h1 variants={fadeUp}
               className="text-6xl md:text-8xl font-bold tracking-tight mb-6 leading-none">
               Regina<br />
@@ -201,14 +229,12 @@ export default function Home() {
             </motion.h1>
 
             <motion.p variants={fadeUp}
-              className="text-lg md:text-xl text-white/50 max-w-xl leading-relaxed mb-4">
-              I've always been more interested in why things break
-              than in following the rules that keep them together.
+              className="text-lg md:text-xl text-white/60 max-w-2xl leading-relaxed mb-4">
+              Most people can either build the model or read the room. I grew up having to do both.
             </motion.p>
             <motion.p variants={fadeUp}
-              className="text-lg md:text-xl text-white/30 max-w-xl leading-relaxed">
-              That tends to be useful when working with risk —
-              and it's led to a pretty unconventional path getting here.
+              className="text-lg md:text-xl text-white/35 max-w-2xl leading-relaxed">
+              I've studied sharks, shorted stocks, and stress-tested systems — because nothing teaches you more about a system than finding where it fails.
             </motion.p>
 
             <motion.div variants={fadeUp} className="flex flex-wrap gap-3 mt-10">
@@ -236,7 +262,7 @@ export default function Home() {
               <div className="absolute -bottom-4 -right-4 bg-[#0f0f0f] border border-white/10 rounded-2xl px-5 py-3">
                 <p className="text-xs text-white/30 mb-1">Currently</p>
                 <p className="text-sm text-white font-medium">MSc Business Analytics</p>
-                <p className="text-xs text-cyan-400">Hult · Boston · Full Scholarship</p>
+                <p className="text-xs text-cyan-400">Graduating August 2026</p>
               </div>
             </div>
           </motion.div>
@@ -256,7 +282,7 @@ export default function Home() {
           variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }}
           className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((s) => (
-            <motion.div key={s.label} variants={fadeUp} className="text-center">
+            <motion.div key={s.label} variants={fadeUp} className="text-left md:text-center">
               <p className="text-5xl font-bold text-cyan-400 mb-2">{s.value}</p>
               <p className="text-xs tracking-widest text-white/30 uppercase">{s.label}</p>
             </motion.div>
@@ -271,25 +297,20 @@ export default function Home() {
             className="text-xs tracking-widest text-white/30 uppercase mb-4">About</motion.p>
 
           <motion.p variants={fadeUp}
-            className="text-4xl md:text-5xl font-light leading-tight text-white/90 max-w-4xl mb-8">
-            I grew up between countries,<br />
-            <span className="text-cyan-400">which makes you good at reading rooms.</span>
+            className="text-4xl md:text-5xl font-light leading-tight text-white/90 max-w-5xl mb-8">
+            I grew up between countries. I've worked across three continents.
           </motion.p>
 
           <motion.p variants={fadeUp}
-            className="text-white/40 text-lg leading-relaxed max-w-2xl mb-12">
-            Mexican and Spanish. Three languages. Studied in London, working in Boston.
-            I finished my degree early not because I was in a rush — I just get bored
-            when I'm not building something. I've stepped into fields I had no business
-            being in and found ways to contribute anyway. That pattern tends to repeat.
+            className="text-white/40 text-lg leading-relaxed max-w-3xl mb-12">
+            At 15 I hacked my school system. My teacher gave me an A and taught me how to patch the vulnerability. I've been curious about broken systems ever since — it just took me a while to realize that was actually a career.
           </motion.p>
 
-          <motion.div variants={stagger} className="grid md:grid-cols-4 gap-4 mb-12">
+          <motion.div variants={stagger} className="grid md:grid-cols-3 gap-4 mb-12">
             {[
               { icon: "◈", label: "Focus", value: "Risk Analytics & AI" },
               { icon: "◎", label: "Languages", value: "EN · ES · FR" },
               { icon: "◉", label: "Visa", value: "OPT + STEM OPT Eligible" },
-              { icon: "◐", label: "Licenses", value: "USPA B · PADI · Student Pilot" },
             ].map(item => (
               <motion.div key={item.label} variants={fadeUp}
                 className="bg-white/[0.02] hover:bg-white/[0.04] border border-white/[0.06] rounded-2xl p-6 transition-all">
@@ -318,10 +339,10 @@ export default function Home() {
           <motion.p variants={fadeUp}
             className="text-xs tracking-widest text-white/30 uppercase mb-4">Projects</motion.p>
           <motion.h2 variants={fadeUp}
-            className="text-4xl font-light text-white/90 mb-3">Selected work</motion.h2>
+            className="text-4xl font-light text-white/90 mb-3">Work that started with an idea</motion.h2>
           <motion.p variants={fadeUp}
             className="text-white/30 text-lg mb-12 max-w-xl">
-            Built across risk modeling, anomaly detection, NLP, security engineering, and AI.
+            A few projects built from curiosity, pressure-testing ideas, and figuring out how systems actually behave.
           </motion.p>
           <div className="grid md:grid-cols-2 gap-4">
             {projects.map((project) => (
@@ -367,10 +388,8 @@ export default function Home() {
             🏆 Boston AI Week Hackathon — 1st Place
           </motion.h2>
           <motion.p variants={fadeUp}
-            className="text-white/50 text-lg leading-relaxed max-w-2xl mb-6">
-            Built something in a weekend that manufacturing companies actually needed.
-            Pitched it. Won. The best part wasn't the win — it was that the solution
-            still makes sense on Monday morning.
+            className="text-white/50 text-lg leading-relaxed max-w-3xl mb-6">
+            Built an AI onboarding platform for manufacturing teams facing knowledge loss from retiring managers. The idea was to capture years of operational know-how, pair it with mentor input and company knowledge, and turn it into a system that could help train new talent faster — while making the field feel more accessible to the next generation.
           </motion.p>
           <motion.div variants={fadeUp} className="flex flex-wrap gap-3">
             {["AI", "Google Developer & Scale Lab", "Hackathon Winner", "September 2025"].map(tag => (
@@ -485,7 +504,6 @@ export default function Home() {
           </motion.div>
         </motion.div>
       </section>
-
     </main>
   );
 }
