@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
@@ -245,6 +246,8 @@ const experience = [
 ];
 
 export default function Home() {
+  const [menuOpen, setMenuOpen] = React.useState(false);
+
   return (
     <main className="bg-[#080808] text-white min-h-screen font-sans pt-16">
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/[0.06] bg-[#080808]/80 backdrop-blur-xl">
@@ -253,6 +256,7 @@ export default function Home() {
             RG
           </Link>
 
+          {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-8">
             {navItems.map((item) =>
               "isPage" in item && item.isPage ? (
@@ -283,7 +287,60 @@ export default function Home() {
               CV ↓
             </a>
           </nav>
+
+          {/* Mobile hamburger */}
+          <button
+            className="md:hidden flex flex-col gap-1.5 p-2"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span className={`block w-6 h-px bg-white transition-all duration-300 origin-center ${menuOpen ? "rotate-45 translate-y-[7px]" : ""}`} />
+            <span className={`block w-6 h-px bg-white transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
+            <span className={`block w-6 h-px bg-white transition-all duration-300 origin-center ${menuOpen ? "-rotate-45 -translate-y-[7px]" : ""}`} />
+          </button>
         </div>
+
+        {/* Mobile menu */}
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden bg-[#080808] border-t border-white/[0.06] px-8 py-10 flex flex-col gap-7"
+          >
+            {navItems.map((item) =>
+              "isPage" in item && item.isPage ? (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="text-2xl font-light text-white/70 hover:text-cyan-400 transition-colors"
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="text-2xl font-light text-white/70 hover:text-cyan-400 transition-colors"
+                >
+                  {item.label}
+                </a>
+              )
+            )}
+            <a
+              href="/cv.pdf"
+              download
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => setMenuOpen(false)}
+              className="mt-2 inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-6 py-3 text-sm text-cyan-400 w-fit"
+            >
+              Download CV ↓
+            </a>
+          </motion.div>
+        )}
       </header>
 
       {/* HERO */}
