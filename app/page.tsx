@@ -28,9 +28,9 @@ const navItems = [
 ];
 
 const stats = [
-  { value: "7", label: "Countries Lived In" },
-  { value: "100%", label: "Graduate Scholarship" },
-  { value: "1st", label: "Place Hackathon" },
+  { value: "80%", label: "Research Time Saved via Python Scraping" },
+  { value: "10+", label: "Analytics Projects Shipped" },
+  { value: "500K+", label: "H-1B Records Architected & Ranked in SQL" },
   { value: "208", label: "Skydives Logged" },
 ];
 
@@ -113,6 +113,27 @@ const skillGroups = [
       { name: "Git", color: "bg-orange-500/20 text-orange-300 border-orange-500/30" },
     ],
   },
+];
+
+const certifications = [
+  { title: "Asset Allocation in Investment", file: "/certifications/Asset allocation in investment certificate.pdf" },
+  { title: "BCG Venture & Business Builds", file: "/certifications/BCG-Venture & Business Builds Job Simulation.pdf" },
+  { title: "DAX Functions in Power BI", file: "/certifications/DAX Functions in Power BI.pdf" },
+  { title: "Data Analysis in Excel", file: "/certifications/Data Analysis in Excel.pdf" },
+  { title: "Data-Driven Decision Making", file: "/certifications/Data-Driven Decision Making for Business.pdf" },
+  { title: "Diploma in Financial Education", file: "/certifications/Diploma in Financial Education.pdf" },
+  { title: "GE Aerospace Digital Technology", file: "/certifications/GE Aerospace.pdf" },
+  { title: "Goldman Sachs Excel Skills", file: "/certifications/Goldman Sachs Excel Skills .pdf" },
+  { title: "Hypothesis Testing in Python", file: "/certifications/Hypothesis Testing in Python.pdf" },
+  { title: "Intermediate SQL", file: "/certifications/Intermediate SQL.pdf" },
+  { title: "Introduction to SQL", file: "/certifications/Introduction to SQL.pdf" },
+  { title: "Introduction to Git", file: "/certifications/Introduction to git .pdf" },
+  { title: "Introduction to Shell", file: "/certifications/Introduction to shell.pdf" },
+  { title: "JPM Investment Banking", file: "/certifications/JPM Investment Banking Job Simulation.pdf" },
+  { title: "Joining Data in SQL", file: "/certifications/Joining Data in SQL.pdf" },
+  { title: "Object-Oriented Programming in Python", file: "/certifications/Object Orientated in Python.pdf" },
+  { title: "Sampling in Python", file: "/certifications/Sampling in Python.pdf" },
+  { title: "Working with Geospatial Data in Python", file: "/certifications/Working with Geospatial Data in Python.pdf" },
 ];
 
 const projects = [
@@ -218,7 +239,7 @@ const experience = [
     date: "Nov 2019 – 2020",
     bullets: [
       "Led social media and marketing strategy for Escudería NAHUALES, earning the highest national score in the category.",
-      "Contributed to the team’s third-place finish in the 2019–2020 national season.",
+      "Contributed to the team's third-place finish in the 2019–2020 national season.",
     ],
   },
 ];
@@ -279,6 +300,13 @@ export default function Home() {
           animate="visible"
         >
           <div className="flex-1">
+            <motion.p
+              variants={fadeUp}
+              className="text-sm text-cyan-400/70 mb-4 tracking-wide"
+            >
+              Hi, I'm
+            </motion.p>
+
             <motion.h1
               variants={fadeUp}
               className="text-6xl md:text-8xl font-bold tracking-tight mb-6 leading-none"
@@ -292,26 +320,10 @@ export default function Home() {
               variants={fadeUp}
               className="text-xl sm:text-2xl md:text-2xl text-white/75 max-w-2xl leading-relaxed mb-4"
             >
-              I work where analytics, risk, and strategy meet.
+              I work where analytics, risk, and strategy meet. I build technical solutions across machine learning, AI, security, and finance.
             </motion.p>
 
-            <motion.p
-              variants={fadeUp}
-              className="text-base sm:text-lg md:text-lg text-white/45 max-w-2xl leading-relaxed mb-4"
-            >
-              Raised across seven countries and trained across finance, computer science,
-              and AI, I build technical solutions for complex environments where judgment
-              matters as much as the model.
-            </motion.p>
 
-            <motion.p
-              variants={fadeUp}
-              className="text-base sm:text-lg md:text-lg text-white/35 max-w-2xl leading-relaxed"
-            >
-              I’ve worked across markets, machine learning, and field research — but the
-              common thread has always been the same: understanding how systems behave
-              under pressure.
-            </motion.p>
 
             <motion.div variants={fadeUp} className="flex flex-wrap gap-3 mt-10">
               <a
@@ -401,7 +413,7 @@ export default function Home() {
 
           <motion.p
             variants={fadeUp}
-            className="text-3xl sm:text-4xl md:text-5xl font-light leading-tight text-white/90 max-w-5xl mb-8"
+            className="text-lg leading-relaxed text-white/70 max-w-3xl mb-6"
           >
             I grew up across seven countries, which taught me early how to adapt fast,
             read people, and notice when something does not add up.
@@ -420,10 +432,9 @@ export default function Home() {
             variants={fadeUp}
             className="text-white/35 text-lg leading-relaxed max-w-3xl mb-12"
           >
-            At 10, I found a vulnerability in my school’s grading system. My teacher
-            turned it into a lesson: he gave me an A, patched the issue, and showed me
-            that curiosity is most useful when it improves the system rather than just
-            breaking it. I have been interested in failure points ever since.
+            At 15, I hacked my school system. My teacher gave me an A and taught me how
+            to patch the vulnerability. I've been curious about broken systems ever since
+            — it just took me a while to realize that was actually a career.
           </motion.p>
 
           <motion.div variants={stagger} className="grid md:grid-cols-3 gap-4 mb-12">
@@ -468,19 +479,10 @@ export default function Home() {
 
           <motion.h2
             variants={fadeUp}
-            className="text-4xl font-light text-white/90 mb-3"
+            className="text-4xl font-light mb-12"
           >
-            Selected Work Across AI, Analytics, and Security
+            <span className="text-cyan-400 drop-shadow-[0_0_20px_rgba(34,211,238,0.4)]">Selected Work</span>
           </motion.h2>
-
-          <motion.p
-            variants={fadeUp}
-            className="text-white/30 text-lg mb-12 max-w-3xl"
-          >
-            A selection of projects built across machine learning, cybersecurity,
-            analytics, and decision systems — each designed to solve a real problem and
-            understand how the underlying system actually behaves.
-          </motion.p>
 
           <div className="grid md:grid-cols-2 gap-4">
             {projects.map((project) => (
@@ -526,51 +528,86 @@ export default function Home() {
 
       <div className="mx-6 sm:mx-8 md:mx-24 h-px bg-white/[0.06]" />
 
-      {/* FEATURED */}
+      {/* FEATURED — HACKATHON */}
       <section className="px-6 sm:px-8 md:px-24 py-20 md:py-24">
         <motion.div
           variants={stagger}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="bg-gradient-to-br from-cyan-400/10 via-cyan-400/5 to-transparent border border-cyan-400/20 shadow-[0_0_60px_rgba(34,211,238,0.08)] rounded-3xl p-8 md:p-16"
+          className="flex flex-col gap-6"
         >
-          <motion.p
+          {/* Hackathon */}
+          <motion.div
             variants={fadeUp}
-            className="text-xs tracking-widest text-cyan-400 uppercase mb-4"
+            className="bg-gradient-to-br from-cyan-400/10 via-cyan-400/5 to-transparent border border-cyan-400/20 shadow-[0_0_60px_rgba(34,211,238,0.08)] rounded-3xl p-8 md:p-16"
           >
-            Featured
-          </motion.p>
+            <p className="text-xs tracking-widest text-cyan-400 uppercase mb-4">Featured</p>
 
-          <motion.h2
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              🏆 Boston AI Week Hackathon — Won 1st Place
+            </h2>
+
+            <p className="text-white/50 text-lg leading-relaxed max-w-3xl mb-6">
+              Built a prototype AI onboarding platform for small U.S. manufacturers
+              struggling with knowledge transfer from retiring managers. The solution
+              captured operational knowledge and mentor input to help train new workers
+              faster and reduce onboarding friction.
+            </p>
+
+            <div className="flex flex-wrap gap-3">
+              {["AI", "Google Developer & Scale Lab", "Hackathon Winner", "September 2025"].map(
+                (tag) => (
+                  <span
+                    key={tag}
+                    className="text-xs bg-cyan-400/10 border border-cyan-400/20 rounded-full px-3 py-1 text-cyan-400"
+                  >
+                    {tag}
+                  </span>
+                )
+              )}
+            </div>
+          </motion.div>
+
+          {/* Licenses */}
+          <motion.div
             variants={fadeUp}
-            className="text-3xl md:text-4xl font-bold text-white mb-4"
+            className="bg-white/[0.02] border border-white/[0.06] rounded-3xl p-8 md:p-12"
           >
-            🏆 Boston AI Week Hackathon — 1st Place
-          </motion.h2>
+            <p className="text-xs tracking-widest text-white/30 uppercase mb-6">Licensed & Certified</p>
 
-          <motion.p
-            variants={fadeUp}
-            className="text-white/50 text-lg leading-relaxed max-w-3xl mb-6"
-          >
-            Built a prototype AI onboarding platform for small U.S. manufacturers
-            struggling with knowledge transfer from retiring managers. The solution
-            captured operational knowledge and mentor input to help train new workers
-            faster and reduce onboarding friction. It was designed to make critical
-            know-how easier to transfer before it disappeared from the shop floor.
-          </motion.p>
+            <div className="grid md:grid-cols-3 gap-6">
+              {/* USPA B License */}
+              <div className="flex flex-col gap-3 border border-white/[0.06] rounded-2xl p-6 hover:border-cyan-400/20 transition-all">
+                <div className="flex items-center gap-3 mb-1">
+                  <span className="text-2xl">🪂</span>
+                  <p className="text-white font-semibold text-sm">USPA B License</p>
+                </div>
+                <p className="text-white/30 text-xs leading-relaxed">United States Parachute Association</p>
+                <p className="text-cyan-400 text-sm font-medium">208 skydives logged</p>
+                <p className="text-white/20 text-xs italic">Only one accident. Pretty good odds.</p>
+              </div>
 
-          <motion.div variants={fadeUp} className="flex flex-wrap gap-3">
-            {["AI", "Google Developer & Scale Lab", "Hackathon Winner", "September 2025"].map(
-              (tag) => (
-                <span
-                  key={tag}
-                  className="text-xs bg-cyan-400/10 border border-cyan-400/20 rounded-full px-3 py-1 text-cyan-400"
-                >
-                  {tag}
-                </span>
-              )
-            )}
+              {/* British Skydiving */}
+              <div className="flex flex-col gap-3 border border-white/[0.06] rounded-2xl p-6 hover:border-cyan-400/20 transition-all">
+                <div className="flex items-center gap-3 mb-1">
+                  <span className="text-2xl">🇬🇧</span>
+                  <p className="text-white font-semibold text-sm">British Skydiving License</p>
+                </div>
+                <p className="text-white/30 text-xs leading-relaxed">British Skydiving Federation</p>
+                <p className="text-cyan-400 text-sm font-medium">Licensed jumper, UK</p>
+              </div>
+
+              {/* Scuba */}
+              <div className="flex flex-col gap-3 border border-white/[0.06] rounded-2xl p-6 hover:border-cyan-400/20 transition-all">
+                <div className="flex items-center gap-3 mb-1">
+                  <span className="text-2xl">🤿</span>
+                  <p className="text-white font-semibold text-sm">SSI & PADI Certified</p>
+                </div>
+                <p className="text-white/30 text-xs leading-relaxed">Scuba Schools International · PADI</p>
+                <p className="text-cyan-400 text-sm font-medium">Specialty Diver</p>
+              </div>
+            </div>
           </motion.div>
         </motion.div>
       </section>
@@ -643,7 +680,7 @@ export default function Home() {
             Tools, Technologies & Methods
           </motion.h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {skillGroups.map((group) => (
               <motion.div
                 key={group.category}
@@ -666,6 +703,30 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
+
+          {/* CERTIFICATIONS inside Skills */}
+          <motion.div variants={fadeUp}>
+            <p className="text-xs tracking-widest text-white/30 uppercase mb-6">Certifications</p>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+              {certifications.map((cert) => (
+                <a
+                  key={cert.title}
+                  href={cert.file}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group bg-white/[0.02] border border-white/[0.06] hover:border-cyan-400/20 rounded-xl p-4 transition-all hover:bg-white/[0.04] flex flex-col gap-2"
+                >
+                  <p className="text-cyan-400/50 text-xs tracking-widest uppercase">Certificate</p>
+                  <p className="text-white/70 text-xs font-medium leading-snug group-hover:text-white transition-colors">
+                    {cert.title}
+                  </p>
+                  <span className="text-white/20 text-xs group-hover:text-cyan-400 transition-colors mt-auto">
+                    View →
+                  </span>
+                </a>
+              ))}
+            </div>
+          </motion.div>
         </motion.div>
       </section>
 
@@ -685,11 +746,11 @@ export default function Home() {
             variants={fadeUp}
             className="text-5xl md:text-6xl font-bold mb-4"
           >
-            Let’s <span className="text-cyan-400">connect.</span>
+            Let's <span className="text-cyan-400">connect.</span>
           </motion.h2>
 
-          <motion.p variants={fadeUp} className="text-white/30 mb-4 text-lg max-w-xl">
-            Open to conversations about risk, analytics, security, and technical strategy.
+          <motion.p variants={fadeUp} className="text-white/30 mb-12 text-lg max-w-xl">
+            I'm always open to a good conversation.
           </motion.p>
 
           <motion.p variants={fadeUp} className="text-white/20 mb-12 text-base max-w-lg">
